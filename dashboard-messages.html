@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic Page Needs
+================================================== -->
+    <title>Open_AI</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+
+    <!-- CSS
+================================================== -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/colors/blue.css" />
+    <link rel="stylesheet" href="css/chatbox.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="gray">
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <div class="dashboard-container">
+        <!-- Dashboard Sidebar
+        ================================================== -->
+        <div class="dashboard-sidebar">
+          <div class="dashboard-sidebar-inner" data-simplebar>
+            <div class="dashboard-nav-container">
+              <!-- Responsive Navigation Trigger -->
+              <a href="#" class="dashboard-responsive-nav-trigger">
+                <span class="hamburger hamburger--collapse">
+                  <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                  </span>
+                </span>
+                <span class="trigger-title">Dashboard Navigation</span>
+              </a>
+
+              <!-- Navigation -->
+              <div class="dashboard-nav">
+                <div class="dashboard-nav-inner">
+                  <ul data-submenu-title="Start">
+                    <li>
+                      <a href="dashboard.html"
+                        ><i class="icon-material-outline-dashboard"></i>
+                        Dashboard</a
+                      >
+                    </li>
+                  </ul>
+
+                  <ul data-submenu-title="A.I Powered">
+                    <li>
+                      <a href="#"
+                        ><i class="icon-feather-file-plus"></i> Long-Form
+                        Editor</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#"
+                        ><i class="icon-feather-mail"></i> Email Tools</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#"
+                        ><i class="icon-brand-facebook"></i> Social Media
+                        Tools</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#"
+                        ><i class="icon-feather-trending-up"></i> SEO Tools</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#"
+                        ><i class="icon-feather-clock"></i> Recent Activity</a
+                      >
+                    </li>
+                  </ul>
+
+                  <ul data-submenu-title="Account">
+                    <li>
+                      <a href="#"
+                        ><i class="icon-feather-globe"></i> Change Language</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#"
+                        ><i class="icon-line-awesome-check-square-o"></i>
+                        Upgrade</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#"
+                        ><i class="icon-material-baseline-star-border"></i>
+                        Share Feedback</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#"
+                        ><i
+                          class="icon-material-outline-power-settings-new"
+                        ></i>
+                        Logout</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- Navigation / End -->
+            </div>
+          </div>
+        </div>
+        <!-- Dashboard Sidebar / End -->
+
+        <!-- Dashboard Content
+        ================================================== -->
+        <div class="dashboard-content-container" data-simplebar>
+          <div class="chat-container compress-editor">
+            <div class="chatbox">
+              <div class="chatbox-nav">
+                <div class="chatbox-nav-date" type="text" readonly></div>
+                <div class="chatboxnav-btn">
+                  <button class="chatbox-nav-clearbtn">Clear Chat</button>
+                  <button class="chatbox-nav-newbtn">New Project</button>
+                </div>
+              </div>
+
+              <button id="editorButton">
+                <i class="icon-feather-edit-3"></i>
+                <span id="editorButtonText">Editor</span>
+              </button>
+              <div class="chat-content" id="chatContent">
+                <div class="chat-head">
+                  <h3 class="chat-head-title">
+                    Welcome to <span style="color: #2a3edad8">Chat by AI</span>
+                  </h3>
+                  <p class="chat-head-summary">
+                    Get started by writing a task and Chat can do the rest. Not
+                    sure where to start? Check out the Prompt Library for
+                    inspiration.
+                  </p>
+                </div>
+                <div class="prompts">
+                  <div class="demo">
+                    <div class="logo">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-5 w-5 text-grey-600"
+                      >
+                        <g clip-path="url(#clip0_3437_12539)">
+                          <path
+                            d="M1 1H13"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            opacity="0.5"
+                          ></path>
+                          <path
+                            d="M1 5H3"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            opacity="0.5"
+                          ></path>
+                          <path
+                            d="M13 13L15 15"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          ></path>
+                          <circle
+                            cx="10"
+                            cy="10"
+                            r="4"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          ></circle>
+                        </g>
+                        <defs>
+                          <clipPath id="clip0_3437_12539">
+                            <rect width="16" height="16" fill="white"></rect>
+                          </clipPath>
+                        </defs>
+                      </svg>
+                    </div>
+                    <div class="demo-text">
+                      <div class="demo-text-head">
+                        <h3>Real Time Search</h3>
+                      </div>
+                      <p>"Summarize the latest news on generative AI"</p>
+                      <p>
+                        "Write a personalized email to [insert Linkedin profile
+                        URL]"
+                      </p>
+                    </div>
+                  </div>
+                  <div class="demo">
+                    <div class="logo">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-5 w-5 text-grey-600"
+                      >
+                        <g clip-path="url(#clip0_3456_12804)">
+                          <path
+                            d="M11 2L14 5L6 13L2 14L3 10L11 2Z"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-miterlimit="10"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          ></path>
+                          <path
+                            d="M0.58866 3.69448C-0.148389 3.32595 -0.148389 2.27415 0.58866 1.90562L1.3174 1.54125C1.41416 1.49287 1.49263 1.41441 1.54101 1.31764L1.90538 0.588904C2.2739 -0.148144 3.32571 -0.148145 3.69423 0.588904L4.0586 1.31764C4.10698 1.41441 4.18545 1.49287 4.28221 1.54125L5.01095 1.90562C5.748 2.27415 5.748 3.32595 5.01095 3.69448L4.28221 4.05885C4.18545 4.10723 4.10698 4.18569 4.0586 4.28245L3.69423 5.01119C3.32571 5.74824 2.2739 5.74824 1.90538 5.01119L1.54101 4.28245C1.49263 4.18569 1.41416 4.10723 1.3174 4.05885L0.58866 3.69448Z"
+                            fill="currentColor"
+                            opacity=".5"
+                          ></path>
+                          <path
+                            d="M10.9891 14.0944C10.252 13.7259 10.252 12.674 10.9891 12.3055L11.7178 11.9412C11.8146 11.8928 11.893 11.8143 11.9414 11.7175L12.3058 10.9888C12.6743 10.2518 13.7261 10.2518 14.0946 10.9888L14.459 11.7175C14.5074 11.8143 14.5858 11.8928 14.6826 11.9412L15.4113 12.3055C16.1484 12.674 16.1484 13.7259 15.4113 14.0944L14.6826 14.4587C14.5858 14.5071 14.5074 14.5856 14.459 14.6824L14.0946 15.4111C13.7261 16.1481 12.6743 16.1481 12.3058 15.4111L11.9414 14.6824C11.893 14.5856 11.8146 14.5071 11.7178 14.4587L10.9891 14.0944Z"
+                            fill="currentColor"
+                            opacity=".5"
+                          ></path>
+                        </g>
+                        <defs>
+                          <clipPath id="clip0_3456_12804">
+                            <rect width="16" height="16" fill="white"></rect>
+                          </clipPath>
+                        </defs>
+                      </svg>
+                    </div>
+                    <div class="demo-text">
+                      <div class="demo-text-head">
+                        <h3>Long Form Content</h3>
+                      </div>
+                      <p>
+                        "Create a blog post about search engine optimization"
+                      </p>
+                      <p>"Write a press release about www.copy.ai"</p>
+                    </div>
+                  </div>
+                  <div class="demo">
+                    <div class="logo">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-5 w-5 text-grey-600"
+                      >
+                        <path
+                          d="M2 3C2 1.89543 2.89543 1 4 1H10.1716C10.702 1 11.2107 1.21071 11.5858 1.58579L13.4142 3.41421C13.7893 3.78929 14 4.29799 14 4.82843V13C14 14.1046 13.1046 15 12 15H4C2.89543 15 2 14.1046 2 13V3Z"
+                          stroke="currentColor"
+                          stroke-width="2"
+                        ></path>
+                        <path
+                          d="M6 10H9"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-miterlimit="10"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          opacity=".5"
+                        ></path>
+                        <path
+                          d="M10 6H6"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-miterlimit="10"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          opacity=".5"
+                        ></path>
+                      </svg>
+                    </div>
+                    <div class="demo-text">
+                      <div class="demo-text-head">
+                        <h3>Brainstorm Ideas</h3>
+                      </div>
+                      <p>"Generate 10 Instagram captions for fashion week"</p>
+                      <p>
+                        "Write a product description for a bicycle in the style
+                        of Hemingway"
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="search-input">
+                <div class="textarea-container">
+                  <textarea
+                    placeholder="Ask or search anything"
+                    class="input-area"
+                    id="chatboxTextarea"
+                    oninput="adjustTextareaHeight(this)"
+                  ></textarea>
+                </div>
+                <div class="textarea-btn">
+                  <div class="button-1">
+                    <i class="icon-material-outline-description"></i>
+                    <button>Browse Prompts</button>
+                  </div>
+                  <div class="button-2">
+                    <i class="icon-material-outline-star-border"></i>
+                    <button>Improve</button>
+                  </div>
+                </div>
+                <div class="send-btn">
+                  <i class="icon-line-awesome-paper-plane" id="sendButton"></i>
+                </div>
+              </div>
+            </div>
+            <div class="editor">
+              <div class="options-bar">
+                <div class="options-1">
+                  <i
+                    class="fa-solid fa-rotate-left"
+                    style="color: rgb(154, 153, 153)"
+                  ></i>
+                  <i
+                    class="fa-solid fa-rotate-right"
+                    style="color: rgb(154, 153, 153)"
+                  ></i>
+                  <i
+                    class="icon-feather-bold"
+                    id="boldButton"
+                    style="color: rgb(64, 63, 63)"
+                  ></i>
+                  <i
+                    class="icon-feather-italic"
+                    id="italicButton"
+                    style="color: rgb(64, 63, 63)"
+                  ></i>
+                  <i
+                    class="icon-feather-underline"
+                    id="underlineButton"
+                    style="color: rgb(64, 63, 63)"
+                  ></i>
+                </div>
+                <div class="options-2">
+                  <h3
+                    id="h1-btn"
+                    class="button"
+                    onclick="toggleFormatting('h1')"
+                  >
+                    H1
+                  </h3>
+                  <h3
+                    id="h2-btn"
+                    class="button"
+                    onclick="toggleFormatting('h2')"
+                  >
+                    H2
+                  </h3>
+                  <h3
+                    id="h3-btn"
+                    class="button"
+                    onclick="toggleFormatting('h3')"
+                  >
+                    H3
+                  </h3>
+                </div>
+                <div class="options-3">
+                  <div class="more-options">
+                    <svg
+                      id="dropdown-button"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M4 8C4 9.10457 3.10457 10 2 10C0.895431 10 0 9.10457 0 8C0 6.89543 0.895431 6 2 6C3.10457 6 4 6.89543 4 8ZM16 8C16 9.10457 15.1046 10 14 10C12.8954 10 12 9.10457 12 8C12 6.89543 12.8954 6 14 6C15.1046 6 16 6.89543 16 8ZM8 10C9.10457 10 10 9.10457 10 8C10 6.89543 9.10457 6 8 6C6.89543 6 6 6.89543 6 8C6 9.10457 6.89543 10 8 10Z"
+                        fill="#6C8D9D"
+                      ></path>
+                    </svg>
+                    <ul class="links-list">
+                      <li>
+                        <svg
+                          width="11"
+                          height="10"
+                          viewBox="0 0 11 10"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="mr-2 h-3.5 w-3.5 text-sm text-grey-600"
+                        >
+                          <path
+                            d="M10.1539 5.83299H4.51316C4.046 5.83299 3.66706 5.45975 3.66706 4.99961C3.66706 4.53886 4.046 4.16622 4.51316 4.16622L10.1539 4.16561C10.6211 4.16561 11 4.53886 11 4.999C11 5.45975 10.6211 5.83238 10.1539 5.83238V5.83299ZM10.1539 1.94262H4.51316C4.046 1.94262 3.66706 1.56937 3.66706 1.10923C3.66706 0.648485 4.046 0.275848 4.51316 0.275848L10.1539 0.275236C10.6211 0.275236 11 0.648483 11 1.10862C11 1.56876 10.6211 1.94201 10.1539 1.94201V1.94262ZM1.12751 10C0.505041 10 0 9.50315 0 8.88944C0 8.27632 0.504436 7.77887 1.12751 7.77887C1.74998 7.77887 2.25502 8.27573 2.25502 8.88944C2.25626 9.50131 1.75183 10 1.12751 10ZM1.12751 6.10962C0.505041 6.10962 0 5.61277 0 4.99906C0 4.38535 0.504436 3.8885 1.12751 3.8885C1.74998 3.8885 2.25502 4.38535 2.25502 4.99906C2.25502 5.61277 1.75183 6.10962 1.12751 6.10962ZM1.12751 2.22113C0.505041 2.22113 0 1.72427 0 1.11056C0 0.49745 0.504436 0 1.12751 0C1.74998 0 2.25502 0.496855 2.25502 1.11056C2.25502 1.72368 1.75183 2.22113 1.12751 2.22113ZM4.51316 8.05356L10.1539 8.05417C10.6211 8.05417 11 8.42742 11 8.88756C11 9.34831 10.6211 9.72094 10.1539 9.72094H4.51316C4.046 9.72094 3.66706 9.34769 3.66706 8.88756C3.66706 8.42681 4.046 8.05417 4.51316 8.05417V8.05356Z"
+                            fill="#382868"
+                          ></path>
+                        </svg>
+                        <h5>Bullet List</h5>
+                      </li>
+                      <li>
+                        <svg
+                          width="13"
+                          height="11"
+                          viewBox="0 0 13 11"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="mr-2 h-3.5 w-3.5 text-sm text-grey-600"
+                        >
+                          <path
+                            d="M0.955566 1.0498C0.955566 0.72168 1.21338 0.487305 1.51807 0.487305H2.26807C2.59619 0.487305 2.83057 0.72168 2.83057 1.0498V3.83887H3.20557C3.53369 3.83887 3.76807 4.09668 3.76807 4.40137C3.76807 4.72949 3.53369 4.96387 3.20557 4.96387H1.33057C1.02588 4.96387 0.768066 4.72949 0.768066 4.40137C0.768066 4.09668 1.02588 3.83887 1.33057 3.83887H1.70557V1.6123H1.51807C1.21338 1.6123 0.955566 1.35449 0.955566 1.0498ZM2.43213 7.72949C2.2915 7.54199 2.01025 7.56543 1.86963 7.75293L1.61182 8.10449C1.42432 8.3623 1.07275 8.43262 0.838379 8.24512C0.580566 8.05762 0.510254 7.70605 0.697754 7.47168L0.955566 7.09668C1.51807 6.32324 2.64307 6.25293 3.27588 6.97949C3.7915 7.54199 3.76807 8.40918 3.25244 8.97168L2.43213 9.83887H3.229C3.53369 9.83887 3.7915 10.0967 3.7915 10.4014C3.7915 10.7295 3.53369 10.9639 3.229 10.9639H1.1665C0.932129 10.9639 0.721191 10.8467 0.650879 10.6357C0.557129 10.4248 0.580566 10.1904 0.744629 10.0264L2.43213 8.19824C2.54932 8.05762 2.54932 7.87012 2.43213 7.72949ZM11.6665 1.21387C12.0649 1.21387 12.4165 1.56543 12.4165 1.96387C12.4165 2.38574 12.0649 2.71387 11.6665 2.71387H5.6665C5.24463 2.71387 4.9165 2.38574 4.9165 1.96387C4.9165 1.56543 5.24463 1.21387 5.6665 1.21387H11.6665ZM11.6665 4.96387C12.0649 4.96387 12.4165 5.31543 12.4165 5.71387C12.4165 6.13574 12.0649 6.46387 11.6665 6.46387H5.6665C5.24463 6.46387 4.9165 6.13574 4.9165 5.71387C4.9165 5.31543 5.24463 4.96387 5.6665 4.96387H11.6665ZM11.6665 8.71387C12.0649 8.71387 12.4165 9.06543 12.4165 9.46387C12.4165 9.88574 12.0649 10.2139 11.6665 10.2139H5.6665C5.24463 10.2139 4.9165 9.88574 4.9165 9.46387C4.9165 9.06543 5.24463 8.71387 5.6665 8.71387H11.6665Z"
+                            fill="#160647"
+                          ></path>
+                        </svg>
+                        <h5>Ordered List</h5>
+                      </li>
+                      <li>
+                        <svg
+                          width="13"
+                          height="11"
+                          viewBox="0 0 13 11"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="mr-2 h-3.5 w-3.5 text-sm text-grey-600"
+                        >
+                          <path
+                            d="M8.04163 7.21387C8.44006 7.51855 8.55725 7.84668 8.4635 8.3623C8.39319 8.76074 8.20569 9.04199 7.901 9.22949C7.05725 9.6748 5.34631 9.51074 3.54163 8.76074C3.14319 8.59668 2.72131 8.78418 2.55725 9.15918C2.39319 9.55762 2.58069 9.97949 2.95569 10.1436C3.70569 10.4482 5.20569 10.9873 6.65881 10.9873C7.36194 10.9873 8.04163 10.8467 8.62756 10.542C9.35413 10.1201 9.79944 9.46387 9.94006 8.59668C10.0338 8.05762 10.0104 7.6123 9.86975 7.21387H8.04163ZM11.6979 5.33887H7.54944C7.17444 5.22168 6.79944 5.10449 6.44788 5.01074C4.45569 4.4248 3.84631 4.09668 4.03381 3.08887C4.08069 2.76074 4.26819 2.47949 4.54944 2.29199C5.04163 1.9873 6.04944 1.75293 8.20569 2.31543C8.60413 2.40918 9.00256 2.1748 9.11975 1.77637C9.2135 1.37793 8.97913 0.956055 8.58069 0.862305C6.44788 0.299805 4.80725 0.34668 3.75256 1.0498C3.09631 1.44824 2.67444 2.10449 2.55725 2.85449C2.34631 4.0498 2.76819 4.82324 3.47131 5.33887H0.822876C0.494751 5.33887 0.260376 5.59668 0.260376 5.87793C0.260376 6.20605 0.494751 6.44043 0.822876 6.44043H11.6979C12.0026 6.44043 12.2604 6.18262 12.2604 5.87793C12.2604 5.59668 12.0026 5.33887 11.6979 5.33887Z"
+                            fill="#160647"
+                          ></path>
+                        </svg>
+                        <h5>Strikethrough</h5>
+                      </li>
+                      <li>
+                        <svg
+                          width="16"
+                          height="13"
+                          viewBox="0 0 16 13"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="mr-2 h-3.5 w-3.5 text-sm text-grey-600"
+                        >
+                          <path
+                            d="M8.39954 10.4639H7.32141L7.76672 8.96387L6.5011 7.95605L5.7511 10.4639H4.64954C4.22766 10.4639 3.89954 10.8154 3.89954 11.2139C3.89954 11.6357 4.22766 11.9639 4.6261 11.9639H8.3761C8.79797 11.9639 9.14954 11.6357 9.14954 11.2139C9.14954 10.8154 8.79797 10.4639 8.39954 10.4639ZM14.9152 11.7295L8.44641 6.64355L9.52454 2.96387H12.1495V3.71387C12.1495 4.13574 12.4777 4.46387 12.8995 4.46387C13.298 4.46387 13.6495 4.13574 13.6495 3.71387V2.21387C13.6495 1.81543 13.298 1.46387 12.8995 1.46387H4.64954C4.22766 1.46387 3.89954 1.81543 3.89954 2.21387V3.08105L1.04016 0.854492C0.805786 0.643555 0.454224 0.69043 0.266724 0.948242C0.0557861 1.18262 0.102661 1.53418 0.360474 1.72168L14.212 12.5732C14.3058 12.667 14.423 12.7139 14.5636 12.7139C14.7277 12.7139 14.8917 12.6201 14.9855 12.4795C15.2198 12.2686 15.173 11.917 14.9152 11.7295ZM7.18079 5.63574L5.25891 4.13574C5.32922 4.01855 5.39954 3.87793 5.39954 3.71387V2.96387H7.95422L7.18079 5.63574Z"
+                            fill="#160647"
+                          ></path>
+                        </svg>
+                        <h5>Remove Formatting</h5>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="textarea-wrapper">
+                <textarea
+                  name="editor-input"
+                  id="editor-input"
+                  class="edit-textarea"
+                  contenteditable="true"
+                  placeholder="Start typing, copy, or paste to get started ..."
+                ></textarea>
+              </div>
+              <div class="bottom-bar">
+                <div class="count-bar">
+                  <p class="count-words">0 Words</p>
+                  <i class="icon-material-outline-star"></i>
+                  <p class="count-characters">0 Characters</p>
+                  <i class="icon-material-outline-star"></i>
+                  <p>Write a few more words</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="small-dialog" class="zoom-anim-dialog mfp-hide dialog-with-tabs">
+      <!--Tabs -->
+      <div class="sign-in-form">
+        <ul class="popup-tabs-nav">
+          <li><a href="#tab">Add Note</a></li>
+        </ul>
+
+        <div class="popup-tabs-container">
+          <!-- Tab -->
+          <div class="popup-tab-content" id="tab">
+            <!-- Welcome Text -->
+            <div class="welcome-text">
+              <h3>Do Not Forget 😎</h3>
+            </div>
+
+            <!-- Form -->
+            <form method="post" id="add-note">
+              <select
+                class="selectpicker with-border default margin-bottom-20"
+                data-size="7"
+                title="Priority"
+              >
+                <option>Low Priority</option>
+                <option>Medium Priority</option>
+                <option>High Priority</option>
+              </select>
+
+              <textarea
+                name="textarea"
+                cols="10"
+                placeholder="Note"
+                class="with-border"
+              ></textarea>
+            </form>
+
+            <!-- Button -->
+            <button
+              class="button full-width button-sliding-icon ripple-effect"
+              type="submit"
+              form="add-note"
+            >
+              Add Note <i class="icon-material-outline-arrow-right-alt"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Apply for a job popup / End -->
+
+    <!-- Scripts
+      ================================================== -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery-migrate-3.3.2.min.js"></script>
+    <script src="js/mmenu.min.js"></script>
+    <script src="js/tippy.all.min.js"></script>
+    <script src="js/simplebar.min.js"></script>
+    <script src="js/bootstrap-slider.min.js"></script>
+    <script src="js/bootstrap-select.min.js"></script>
+    <script src="js/snackbar.js"></script>
+    <script src="js/clipboard.min.js"></script>
+    <script src="js/counterup.min.js"></script>
+    <script src="js/magnific-popup.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/chatbox.js"></script>
+
+    <!-- Snackbar // documentation: https://www.polonel.com/snackbar/ -->
+    <script>
+      // Snackbar for user status switcher
+      $("#snackbar-user-status label").click(function () {
+        Snackbar.show({
+          text: "Your status has been changed!",
+          pos: "bottom-center",
+          showAction: false,
+          actionText: "Dismiss",
+          duration: 3000,
+          textColor: "#fff",
+          backgroundColor: "#383838",
+        });
+      });
+    </script>
+  </body>
+</html>
